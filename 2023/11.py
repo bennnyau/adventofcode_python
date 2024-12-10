@@ -90,13 +90,3 @@ for i in range(len(dict2)):
     dist+=abs(dict2[i][0]-dict2[j][0])+abs(dict2[i][1]-dict2[j][1])
 
 print(dist)
-
-# GOD
-xs, ys = zip(*[(x,y) for y,r in enumerate(open('../adventofcode/2023/11.txt'))
-                     for x,c in enumerate(r) if c == '#'])
-
-def dist(ps):
-    ps = [sum((l, 1)[q in ps] for q in range(p)) for p in ps]
-    return sum(abs(a-b) for a in ps for b in ps)//2
-
-for l in 2, 1_000_000: print(sum(map(dist, [xs, ys])))
