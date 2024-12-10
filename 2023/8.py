@@ -38,21 +38,3 @@ while z<e:
                 allnode.remove(x)
                 y.append(count)
 print(reduce(lcm,y))
-
-# GOD
-import math, re
-
-dirs, _, *graph = open("../adventofcode/2023/8.txt").read().split('\n')
-# print(graph)
-graph = {n: d for n, *d in [re.findall(r'\w+', s) for s in graph]}
-# print(graph)
-start = [n for n in graph if n.endswith('A')]
-
-def solve(pos, i=0):
-    while not pos.endswith('Z'):
-        dir = dirs[i % len(dirs)]
-        pos = graph[pos][dir=='R']
-        i += 1
-    return i
-
-print(solve('AAA'), math.lcm(*map(solve, start)))
