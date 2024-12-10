@@ -64,6 +64,5 @@ for i in codelist:
             break
 
     li.append(10*a+b)
-print(li)
 
 print(sum(li))
