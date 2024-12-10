@@ -12,13 +12,3 @@ def diff(x,i=0):
 
 print(sum(map(diff,lines1)),
       sum(map(diff,lines2)))
-
-#GOD
-data = [[*map(int, s.split())] for s in open('../adventofcode/2023/9.txt')]
-
-def f(l):
-    diffs = [b-a for a,b in zip(l, l[1:])]
-    return l[-1] + f(diffs) if l else 0
-
-for dir in 1, -1:
-    print(sum(f(l[::dir]) for l in data))
